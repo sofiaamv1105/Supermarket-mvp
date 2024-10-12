@@ -34,12 +34,14 @@ namespace Supermarket_mvp._Repositories
         public IEnumerable<PayModeModel> GetAll()
         {
             var payModeList = new List<PayModeModel>();
+
             using (var connection = new SqlConnection(connectionString))
             using (var command = new SqlCommand())
             {
                 connection.Open();
                 command.Connection = connection;
                 command.CommandText = "SELECT * FROM PayMode ORDER BY Pay_Mode_Id DESC";
+
                 using (var reader = command.ExecuteReader())
                 {
                     while (reader.Read())
@@ -52,6 +54,7 @@ namespace Supermarket_mvp._Repositories
                     }
                 }
             }
+
             return payModeList;
         }
 

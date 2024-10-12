@@ -1,9 +1,11 @@
-﻿using System;
+﻿using Supermarket_mvp.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -42,15 +44,6 @@ namespace Supermarket_mvp.Views
                     SearchEvent?.Invoke(this, EventArgs.Empty);
                 }
             };
-        }
-
-        private void TxtSearch_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
 
         }
 
@@ -58,6 +51,8 @@ namespace Supermarket_mvp.Views
         {
             DgPayMode.DataSource = payModeList;
         }
+
+        //Patron singleton para controlar solo una instancia del formulario
         private static PayModeView instance;
 
         public static PayModeView GetInstance(Form parentContainer)
@@ -65,7 +60,10 @@ namespace Supermarket_mvp.Views
             if (instance == null || instance.IsDisposed)
             {
                 instance = new PayModeView();
+                instance.MdiParent = parentContainer;
 
+                instance.FormBorderStyle = FormBorderStyle.None;
+                instance.Dock = DockStyle.Fill;
             }
             else
             {
@@ -76,11 +74,6 @@ namespace Supermarket_mvp.Views
                 instance.BringToFront();
             }
             return instance;
-        }
-
-        private void PayModeView_Load(object sender, EventArgs e)
-        {
-
         }
 
         public string PayModeId

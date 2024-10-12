@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using Supermarket_mvp.Views;
 using Supermarket_mvp.Models;
+using Supermarket_mvp._Repositories;
+using Supermarket_mvp.Presenters;
 
 namespace Supermarket_mvp.Presenters
 {
@@ -18,7 +21,6 @@ namespace Supermarket_mvp.Presenters
         public PayModePresenter(IPayModeView view, IPayModeRepository repository)
         {
             this.payModeBindingSource = new BindingSource();
-            
             this.view = view;
             this.repository = repository;
 
@@ -55,23 +57,49 @@ namespace Supermarket_mvp.Presenters
         }
         private void AddNewPayMode(object? sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            view.IsEdit = false;
+            loadAllPayModeList();
         }
         private void LoadSelectPayModeToEdit(object? sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            var payMode = (PayModeModel)payModeBindingSource.Current;
+
+            view.PayModeId = payMode.Id.ToString();
+            view.PayModeName = payMode.Name;
+            view.PayModeObservation = payMode.Observation;
+
+            view.IsEdit = true;
         }
         private void DeleteSelectedPayMode(object? sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var payMode = (PayModeModel)payModeBindingSource.Current;
+
+                repository.Delete(payMode.Id);
+                view.IsSuccessful = true;
+                view.Message = "Pay Mode deleted Succesfully";
+                loadAllPayModeList();
+            }
+            catch (Exception ex)
+            {
+                view.IsSuccessful = false;
+                view.Message = "An error ocurred, could not delete pay mode";
+            }
         }
         private void SavePayMode(object? sender, EventArgs e)
         {
-            throw new NotImplementedException();
+           
         }
         private void CancelAction(object? sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            CleanViewFields();
+        }
+        private void CleanViewFields()
+        {
+            view.PayModeId = "0";
+            view.PayModeName = "";
+            view.PayModeObservation = "";
         }
     }
 }

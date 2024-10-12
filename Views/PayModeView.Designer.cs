@@ -122,6 +122,7 @@
             // 
             // BtnClose
             // 
+            BtnClose.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             BtnClose.Image = Properties.Resources.cerrar;
             BtnClose.Location = new Point(586, 247);
             BtnClose.Name = "BtnClose";
@@ -131,6 +132,7 @@
             // 
             // BtnDelete
             // 
+            BtnDelete.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             BtnDelete.Image = Properties.Resources.delete;
             BtnDelete.Location = new Point(586, 186);
             BtnDelete.Name = "BtnDelete";
@@ -140,6 +142,7 @@
             // 
             // BtnEdit
             // 
+            BtnEdit.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             BtnEdit.Image = Properties.Resources.edit;
             BtnEdit.Location = new Point(586, 125);
             BtnEdit.Name = "BtnEdit";
@@ -149,6 +152,7 @@
             // 
             // BtnNew
             // 
+            BtnNew.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             BtnNew.Image = Properties.Resources._new;
             BtnNew.Location = new Point(586, 64);
             BtnNew.Name = "BtnNew";
@@ -160,6 +164,7 @@
             // 
             DgPayMode.AllowUserToAddRows = false;
             DgPayMode.AllowUserToDeleteRows = false;
+            DgPayMode.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             DgPayMode.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             DgPayMode.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             DgPayMode.Location = new Point(32, 64);
@@ -179,12 +184,12 @@
             // 
             // TxtSearch
             // 
+            TxtSearch.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             TxtSearch.Location = new Point(32, 35);
             TxtSearch.Name = "TxtSearch";
             TxtSearch.PlaceholderText = "Data to search";
             TxtSearch.Size = new Size(428, 23);
             TxtSearch.TabIndex = 1;
-            TxtSearch.TextChanged += TxtSearch_TextChanged;
             // 
             // label2
             // 
@@ -254,7 +259,6 @@
             TxtPayModeId.Name = "TxtPayModeId";
             TxtPayModeId.Size = new Size(198, 23);
             TxtPayModeId.TabIndex = 3;
-            TxtPayModeId.TextChanged += textBox1_TextChanged;
             // 
             // label5
             // 
@@ -292,7 +296,6 @@
             Controls.Add(panel1);
             Name = "PayModeView";
             Text = "Pay Mode Management";
-            Load += PayModeView_Load;
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             tabControl1.ResumeLayout(false);
