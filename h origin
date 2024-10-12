@@ -1,0 +1,35 @@
+[33mcommit 366bf3d17efc7616862106dab41d2eaae3d8e10e[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m
+Author: Sofia Mendez <sofiaamv2003@gmail.com>
+Date:   Sat Oct 12 13:16:16 2024 -0500
+
+    Adjustments to views
+
+[33mcommit 0a43363172fa8c70bd22313e4d3d991d71ed22c7[m[33m ([m[1;31morigin/main[m[33m)[m
+Author: Sofia Mendez <sofiaamv2003@gmail.com>
+Date:   Sat Oct 12 12:33:50 2024 -0500
+
+    Main View
+
+[33mcommit 541c30d2336639c1181baa40d8d7ecb76292ae6b[m
+Author: Sofia Mendez <sofiaamv2003@gmail.com>
+Date:   Sat Oct 12 00:32:34 2024 -0500
+
+    Pay Mode Repository - Search
+
+[33mcommit 08ef72d46fbefdc6022f101bd32cfed7e3c970dc[m
+Author: Sofia Mendez <sofiaamv2003@gmail.com>
+Date:   Tue Oct 8 22:17:55 2024 -0500
+
+    Pay Mode Presenter
+
+[33mcommit 2a88927aeef896cd876c838a96e31b72858ec5a4[m
+Author: Sofia Mendez <sofiaamv2003@gmail.com>
+Date:   Tue Oct 8 20:37:50 2024 -0500
+
+    Pay Mode View
+
+[33mcommit ed76c0f0ef3b0615fa64dc6fbdc869382b29b163[m
+Author: Sofia Mendez <sofiaamv2003@gmail.com>
+Date:   Sat Oct 5 18:40:18 2024 -0500
+
+    Initial Project
