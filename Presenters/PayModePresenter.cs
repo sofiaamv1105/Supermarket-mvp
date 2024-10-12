@@ -8,6 +8,7 @@ using Supermarket_mvp.Views;
 using Supermarket_mvp.Models;
 using Supermarket_mvp._Repositories;
 using Supermarket_mvp.Presenters;
+using static Azure.Core.HttpHeader;
 
 namespace Supermarket_mvp.Presenters
 {
@@ -57,6 +58,7 @@ namespace Supermarket_mvp.Presenters
         }
         private void AddNewPayMode(object? sender, EventArgs e)
         {
+            MessageBox.Show("Hizo Click en el botón nuevo");
             view.IsEdit = false;
             loadAllPayModeList();
         }
@@ -89,7 +91,33 @@ namespace Supermarket_mvp.Presenters
         }
         private void SavePayMode(object? sender, EventArgs e)
         {
-           
+            var payMode = new PayModeModel();
+            payMode.Id = Convert.ToInt32(view.PayModeId);
+            payMode.Name = view.PayModeName;
+            payMode.Observation = view.PayModeObservation;
+
+            try
+            {
+                new Common.ModelDataValidation().Validate(payMode);
+                if (view.IsEdit)
+                {
+                    repository.Edit(payMode);
+                    view.Message = "Pay Mode Edited successfuly";
+                }
+                else
+                {
+                    repository.Add(payMode);
+                    view.Message = "PAy Mode Added Successfuly";
+                }
+                view.IsSuccessful = true;
+                loadAllPayModeList();
+                CleanViewFields();
+            }
+            catch (Exception ex)
+            {
+                view.IsSuccessful = false;
+                view.Message = ex.Message;
+            }
         }
         private void CancelAction(object? sender, EventArgs e)
         {
