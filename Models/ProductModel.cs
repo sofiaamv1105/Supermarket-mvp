@@ -10,28 +10,26 @@ namespace Supermarket_mvp.Models
 {
     public class ProductModel
     {
-        [DisplayName("Product Id")]
-        public int Id { get; set; }
+        [Key]
+        public int Product_Id { get; set; }
 
         [DisplayName("Product Name")]
         [Required(ErrorMessage = "Product name is required")]
-        [StringLength(50, MinimumLength = 3, ErrorMessage = "Product name must be between 3 and 50 characters")]
-        public string Name { get; set; }
+        [StringLength(100, MinimumLength = 3, ErrorMessage = "Product name must be between 3 and 100 characters")]
+        public string Product_Name { get; set; }
 
         [DisplayName("Product Price")]
         [Required(ErrorMessage = "Product price is required")]
-        [Range(0.01, double.MaxValue, ErrorMessage = "Product price must be greater than 0")]
-        public int Price { get; set; }
+        public decimal Product_Price { get; set; }
 
         [DisplayName("Product Stock")]
         [Required(ErrorMessage = "Product stock is required")]
-        [Range(0, int.MaxValue, ErrorMessage = "Product stock cannot be negative")]
-        public int Stock { get; set; }
+        [Range(0, 10000, ErrorMessage = "Product stock must be between 1 and 10000 characters")]
+        public int Product_Stock { get; set; }
 
         [DisplayName("Category Id")]
         [Required(ErrorMessage = "Category Id is required")]
-        public int CategoryId { get; set; } // Llave foránea
-
-        public virtual Categories Category { get; set; }
+        [Range(0, 100, ErrorMessage = "Category Id debe must be between 0 and 100 characters.")]
+        public int Category_Id { get; set; } // Llave foránea
     }
 }

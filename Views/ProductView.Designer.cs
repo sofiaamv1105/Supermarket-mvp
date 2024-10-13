@@ -34,7 +34,7 @@
             pictureBox2 = new PictureBox();
             label2 = new Label();
             tabControl1 = new TabControl();
-            tabPagePayModeList = new TabPage();
+            tabPageProductList = new TabPage();
             BtnProductClose = new Button();
             BtnProductDelete = new Button();
             BtnProductEdit = new Button();
@@ -64,7 +64,7 @@
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             tabControl1.SuspendLayout();
-            tabPagePayModeList.SuspendLayout();
+            tabPageProductList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)DgProducts).BeginInit();
             tabPageProductDetail.SuspendLayout();
             SuspendLayout();
@@ -125,7 +125,7 @@
             // 
             // tabControl1
             // 
-            tabControl1.Controls.Add(tabPagePayModeList);
+            tabControl1.Controls.Add(tabPageProductList);
             tabControl1.Controls.Add(tabPageProductDetail);
             tabControl1.Dock = DockStyle.Fill;
             tabControl1.Location = new Point(0, 99);
@@ -134,27 +134,27 @@
             tabControl1.Size = new Size(800, 351);
             tabControl1.TabIndex = 5;
             // 
-            // tabPagePayModeList
+            // tabPageProductList
             // 
-            tabPagePayModeList.Controls.Add(BtnProductClose);
-            tabPagePayModeList.Controls.Add(BtnProductDelete);
-            tabPagePayModeList.Controls.Add(BtnProductEdit);
-            tabPagePayModeList.Controls.Add(BtnProductNew);
-            tabPagePayModeList.Controls.Add(BtnClose);
-            tabPagePayModeList.Controls.Add(BtnDelete);
-            tabPagePayModeList.Controls.Add(BtnEdit);
-            tabPagePayModeList.Controls.Add(BtnNew);
-            tabPagePayModeList.Controls.Add(DgProducts);
-            tabPagePayModeList.Controls.Add(BtnProductSearch);
-            tabPagePayModeList.Controls.Add(TxtProductSearch);
-            tabPagePayModeList.Controls.Add(label3);
-            tabPagePayModeList.Location = new Point(4, 24);
-            tabPagePayModeList.Name = "tabPagePayModeList";
-            tabPagePayModeList.Padding = new Padding(3);
-            tabPagePayModeList.Size = new Size(792, 323);
-            tabPagePayModeList.TabIndex = 0;
-            tabPagePayModeList.Text = "Product List";
-            tabPagePayModeList.UseVisualStyleBackColor = true;
+            tabPageProductList.Controls.Add(BtnProductClose);
+            tabPageProductList.Controls.Add(BtnProductDelete);
+            tabPageProductList.Controls.Add(BtnProductEdit);
+            tabPageProductList.Controls.Add(BtnProductNew);
+            tabPageProductList.Controls.Add(BtnClose);
+            tabPageProductList.Controls.Add(BtnDelete);
+            tabPageProductList.Controls.Add(BtnEdit);
+            tabPageProductList.Controls.Add(BtnNew);
+            tabPageProductList.Controls.Add(DgProducts);
+            tabPageProductList.Controls.Add(BtnProductSearch);
+            tabPageProductList.Controls.Add(TxtProductSearch);
+            tabPageProductList.Controls.Add(label3);
+            tabPageProductList.Location = new Point(4, 24);
+            tabPageProductList.Name = "tabPageProductList";
+            tabPageProductList.Padding = new Padding(3);
+            tabPageProductList.Size = new Size(792, 323);
+            tabPageProductList.TabIndex = 0;
+            tabPageProductList.Text = "Product List";
+            tabPageProductList.UseVisualStyleBackColor = true;
             // 
             // BtnProductClose
             // 
@@ -319,10 +319,10 @@
             // 
             // TxtProductStock
             // 
+            TxtProductStock.BackColor = SystemColors.Window;
             TxtProductStock.Location = new Point(47, 223);
             TxtProductStock.Name = "TxtProductStock";
             TxtProductStock.PlaceholderText = "Product Stock";
-            TxtProductStock.ReadOnly = true;
             TxtProductStock.Size = new Size(307, 23);
             TxtProductStock.TabIndex = 9;
             // 
@@ -421,8 +421,8 @@
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             tabControl1.ResumeLayout(false);
-            tabPagePayModeList.ResumeLayout(false);
-            tabPagePayModeList.PerformLayout();
+            tabPageProductList.ResumeLayout(false);
+            tabPageProductList.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)DgProducts).EndInit();
             tabPageProductDetail.ResumeLayout(false);
             tabPageProductDetail.PerformLayout();
@@ -437,7 +437,7 @@
         private PictureBox pictureBox2;
         private Label label2;
         private TabControl tabControl1;
-        private TabPage tabPagePayModeList;
+        private TabPage tabPageProductList;
         private Button BtnClose;
         private Button BtnDelete;
         private Button BtnEdit;

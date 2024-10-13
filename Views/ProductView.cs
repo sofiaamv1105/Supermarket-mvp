@@ -47,6 +47,7 @@ namespace Supermarket_mvp.Views
                 tabControl1.TabPages.Remove(tabPageProductList);
                 tabControl1.TabPages.Add(tabPageProductDetail);
                 tabPageProductDetail.Text = "Add New Product";
+                ClearFields();
             };
 
             BtnProductEdit.Click += delegate
@@ -81,7 +82,7 @@ namespace Supermarket_mvp.Views
                 {
                     tabControl1.TabPages.Add(tabPageProductList);
                     tabControl1.TabPages.Remove(tabPageProductDetail);
-
+                    ClearFields();
                 }
 
                 MessageBox.Show(Message);
@@ -96,6 +97,13 @@ namespace Supermarket_mvp.Views
 
             };
         }
+        public void ClearFields()
+        {
+            TxtProductName.Text = string.Empty;
+            TxtProductPrice.Text = string.Empty;
+            TxtProductStock.Text = string.Empty;
+            TxtCategoryId.Text = string.Empty;
+        }
 
         public void SetProductListBindingSource(BindingSource productList)
         {
@@ -104,7 +112,7 @@ namespace Supermarket_mvp.Views
 
         private static ProductView instance;
 
-        public static PayModeView GetInstance(Form parentContainer)
+        public static ProductView GetInstance(Form parentContainer)
         {
             if (instance == null || instance.IsDisposed)
             {
@@ -124,30 +132,30 @@ namespace Supermarket_mvp.Views
             }
             return instance;
         }
-        public int ProductId
+        public string ProductId
         {
-            get { return int.Parse(TxtProductId.Text); }
-            set { TxtProductId.Text = value.ToString(); }
+            get { return TxtProductId.Text; }
+            set { TxtProductId.Text = value; }
         }
-        string IProductView.ProductName
+        public string ProductName
         {
             get { return TxtProductName.Text; }
             set { TxtProductName.Text = value; }
         }
-        public decimal ProductPrice
+        public string ProductPrice
         {
-            get { return decimal.Parse(TxtProductPrice.Text); }
-            set { TxtProductPrice.Text = value.ToString("0.00"); }
+            get { return TxtProductPrice.Text; }
+            set { TxtProductPrice.Text = value; }
         }
-        public int ProductStock
+        public string ProductStock
         {
-            get { return int.Parse(TxtProductStock.Text); }
-            set { TxtProductStock.Text = value.ToString(); }
+            get { return TxtProductStock.Text; }
+            set { TxtProductStock.Text = value; }
         }
-        public int CategoryId
+        public string CategoryId
         {
-            get { return int.Parse(TxtCategoryId.Text); }
-            set { TxtCategoryId.Text = value.ToString(); }
+            get { return TxtCategoryId.Text; }
+            set { TxtCategoryId.Text = value; }
         }
         public string SearchValue
         {
