@@ -15,8 +15,7 @@ namespace Supermarket_mvp.Views
         public MainView()
         {
             InitializeComponent();
-            BtnPayMode.Click += delegate { ShowPayModeView?.Invoke(this, EventArgs.Empty); };
-
+            this.IsMdiContainer = true;
 
             BtnExit.Click += delegate { this.Close(); };
         }
@@ -24,6 +23,11 @@ namespace Supermarket_mvp.Views
         private void BtnExit_Click(object? sender, EventArgs e)
         {
             throw new NotImplementedException();
+        }
+
+        private void BtnPayMode_Click(object sender, EventArgs e)
+        {
+            BtnPayMode.Click += delegate { ShowPayModeView?.Invoke(this, EventArgs.Empty); };
         }
 
         public event EventHandler ShowPayModeView;

@@ -44,7 +44,8 @@ namespace Supermarket_mvp.Views
                     SearchEvent?.Invoke(this, EventArgs.Empty);
                 }
             };
-            BtnNew.Click += delegate {
+            BtnNew.Click += delegate
+            {
                 AddNewEvent?.Invoke(this, EventArgs.Empty);
 
                 tabControl1.TabPages.Remove(tabPagePayModeList);
@@ -52,16 +53,18 @@ namespace Supermarket_mvp.Views
                 tabPagePayModeDetail.Text = "Add New Pay Mode";
             };
 
-            BtnEdit.Click += delegate {
+            BtnEdit.Click += delegate
+            {
                 EditEvent?.Invoke(this, EventArgs.Empty);
 
                 tabControl1.TabPages.Remove(tabPagePayModeList);
                 tabControl1.TabPages.Add(tabPagePayModeDetail);
-
                 tabPagePayModeDetail.Text = "Edit Pay Mode";
                 // Cambia el título de la pestaña
             };
-            BtnDelete.Click += delegate {
+
+            BtnDelete.Click += delegate
+            {
                 var result = MessageBox.Show(
                     "Are you sure you want to delete the selected Pay Mode?",
                     "Warning",
@@ -89,13 +92,14 @@ namespace Supermarket_mvp.Views
                 MessageBox.Show(Message);
             };
 
-            BtnCancel.Click += delegate {
+            BtnCancel.Click += delegate
+            {
                 CancelEvent?.Invoke(this, EventArgs.Empty);
 
                 tabControl1.TabPages.Remove(tabPagePayModeDetail);
                 tabControl1.TabPages.Add(tabPagePayModeList);
 
-            }; 
+            };
         }
 
         public void SetPayModeListBildingSource(BindingSource payModeList)
@@ -149,18 +153,19 @@ namespace Supermarket_mvp.Views
         }
         public bool IsEdit
         {
-            get { return IsEdit; }
-            set { IsEdit = value; }
+            get { return isEdit; }
+            set { isEdit = value; }
         }
         public bool IsSuccessful
         {
-            get { return IsSuccessful; }
-            set { IsSuccessful = value; }
+            get { return isSuccessful; }
+            set { isSuccessful = value; }
         }
         public string Message
         {
-            get { return Message; }
-            set { Message = value; }
+            get { return message; }
+            set { message = value; }
         }
+
     }
 }

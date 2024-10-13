@@ -86,7 +86,7 @@ namespace Supermarket_mvp.Presenters
             catch (Exception ex)
             {
                 view.IsSuccessful = false;
-                view.Message = "An error ocurred, could not delete pay mode";
+                view.Message = ex.Message;
             }
         }
         private void SavePayMode(object? sender, EventArgs e)
