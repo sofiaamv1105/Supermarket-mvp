@@ -11,7 +11,7 @@ namespace Supermarket_mvp.Models
     public class ProductModel
     {
         [DisplayName("Product Id")]
-        public int? Id { get; set; }
+        public int Id { get; set; }
 
         [DisplayName("Product Name")]
         [Required(ErrorMessage = "Product name is required")]
@@ -21,7 +21,7 @@ namespace Supermarket_mvp.Models
         [DisplayName("Product Price")]
         [Required(ErrorMessage = "Product price is required")]
         [Range(0.01, double.MaxValue, ErrorMessage = "Product price must be greater than 0")]
-        public decimal Price { get; set; }
+        public int Price { get; set; }
 
         [DisplayName("Product Stock")]
         [Required(ErrorMessage = "Product stock is required")]
