@@ -60,7 +60,7 @@
             // 
             // panel1
             // 
-            panel1.BackColor = SystemColors.ActiveCaption;
+            panel1.BackColor = SystemColors.MenuHighlight;
             panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Top;
@@ -72,6 +72,7 @@
             // 
             // pictureBox1
             // 
+            pictureBox1.BackColor = Color.Transparent;
             pictureBox1.Image = Properties.Resources.buy;
             pictureBox1.Location = new Point(36, 3);
             pictureBox1.Name = "pictureBox1";
@@ -82,7 +83,7 @@
             // 
             // label1
             // 
-            label1.BackColor = SystemColors.ActiveCaption;
+            label1.BackColor = Color.Transparent;
             label1.FlatStyle = FlatStyle.Flat;
             label1.Font = new Font("Segoe UI", 30F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.Location = new Point(209, 9);
@@ -166,6 +167,7 @@
             DgPayMode.AllowUserToDeleteRows = false;
             DgPayMode.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             DgPayMode.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            DgPayMode.BackgroundColor = SystemColors.GradientInactiveCaption;
             DgPayMode.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             DgPayMode.Location = new Point(32, 64);
             DgPayMode.Name = "DgPayMode";
