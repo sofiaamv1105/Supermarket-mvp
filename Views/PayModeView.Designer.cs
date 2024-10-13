@@ -85,10 +85,10 @@
             // 
             label1.BackColor = Color.Transparent;
             label1.FlatStyle = FlatStyle.Flat;
-            label1.Font = new Font("Segoe UI", 30F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(209, 9);
+            label1.Font = new Font("Segoe UI", 48F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(209, 3);
             label1.Name = "label1";
-            label1.Size = new Size(300, 71);
+            label1.Size = new Size(400, 93);
             label1.TabIndex = 0;
             label1.Text = "Pay Mode";
             // 
