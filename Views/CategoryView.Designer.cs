@@ -33,11 +33,6 @@
             label1 = new Label();
             tabControl1 = new TabControl();
             tabPageCategoryList = new TabPage();
-            BtnCategoryClose = new Button();
-            BtnCategoryDelete = new Button();
-            BtnCategoryEdit = new Button();
-            BtnCategoryNew = new Button();
-            DgCategory = new DataGridView();
             BtnCategorySearch = new Button();
             TxtCategorySearch = new TextBox();
             label2 = new Label();
@@ -50,12 +45,17 @@
             label5 = new Label();
             label4 = new Label();
             label3 = new Label();
+            BtnCategoryClose = new Button();
+            BtnCategoryDelete = new Button();
+            BtnCategoryEdit = new Button();
+            BtnCategoryNew = new Button();
+            DgCategory = new DataGridView();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             tabControl1.SuspendLayout();
             tabPageCategoryList.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)DgCategory).BeginInit();
             tabPageCategoryDetail.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)DgCategory).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -103,11 +103,11 @@
             // 
             // tabPageCategoryList
             // 
+            tabPageCategoryList.Controls.Add(DgCategory);
             tabPageCategoryList.Controls.Add(BtnCategoryClose);
             tabPageCategoryList.Controls.Add(BtnCategoryDelete);
             tabPageCategoryList.Controls.Add(BtnCategoryEdit);
             tabPageCategoryList.Controls.Add(BtnCategoryNew);
-            tabPageCategoryList.Controls.Add(DgCategory);
             tabPageCategoryList.Controls.Add(BtnCategorySearch);
             tabPageCategoryList.Controls.Add(TxtCategorySearch);
             tabPageCategoryList.Controls.Add(label2);
@@ -118,51 +118,6 @@
             tabPageCategoryList.TabIndex = 0;
             tabPageCategoryList.Text = "Category List";
             tabPageCategoryList.UseVisualStyleBackColor = true;
-            // 
-            // BtnCategoryClose
-            // 
-            BtnCategoryClose.Image = Properties.Resources.cerrar;
-            BtnCategoryClose.Location = new Point(589, 250);
-            BtnCategoryClose.Name = "BtnCategoryClose";
-            BtnCategoryClose.Size = new Size(184, 52);
-            BtnCategoryClose.TabIndex = 7;
-            BtnCategoryClose.UseVisualStyleBackColor = true;
-            // 
-            // BtnCategoryDelete
-            // 
-            BtnCategoryDelete.Image = Properties.Resources.delete;
-            BtnCategoryDelete.Location = new Point(589, 192);
-            BtnCategoryDelete.Name = "BtnCategoryDelete";
-            BtnCategoryDelete.Size = new Size(184, 52);
-            BtnCategoryDelete.TabIndex = 6;
-            BtnCategoryDelete.UseVisualStyleBackColor = true;
-            // 
-            // BtnCategoryEdit
-            // 
-            BtnCategoryEdit.Image = Properties.Resources.edit;
-            BtnCategoryEdit.Location = new Point(589, 132);
-            BtnCategoryEdit.Name = "BtnCategoryEdit";
-            BtnCategoryEdit.Size = new Size(184, 54);
-            BtnCategoryEdit.TabIndex = 5;
-            BtnCategoryEdit.UseVisualStyleBackColor = true;
-            // 
-            // BtnCategoryNew
-            // 
-            BtnCategoryNew.Image = Properties.Resources._new;
-            BtnCategoryNew.Location = new Point(589, 72);
-            BtnCategoryNew.Name = "BtnCategoryNew";
-            BtnCategoryNew.Size = new Size(184, 54);
-            BtnCategoryNew.TabIndex = 4;
-            BtnCategoryNew.UseVisualStyleBackColor = true;
-            // 
-            // DgCategory
-            // 
-            DgCategory.BackgroundColor = SystemColors.GradientInactiveCaption;
-            DgCategory.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DgCategory.Location = new Point(45, 74);
-            DgCategory.Name = "DgCategory";
-            DgCategory.Size = new Size(538, 228);
-            DgCategory.TabIndex = 3;
             // 
             // BtnCategorySearch
             // 
@@ -281,6 +236,60 @@
             label3.TabIndex = 0;
             label3.Text = "Category Id";
             // 
+            // BtnCategoryClose
+            // 
+            BtnCategoryClose.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            BtnCategoryClose.Image = Properties.Resources.cerrar;
+            BtnCategoryClose.Location = new Point(589, 257);
+            BtnCategoryClose.Name = "BtnCategoryClose";
+            BtnCategoryClose.Size = new Size(182, 55);
+            BtnCategoryClose.TabIndex = 11;
+            BtnCategoryClose.UseVisualStyleBackColor = true;
+            // 
+            // BtnCategoryDelete
+            // 
+            BtnCategoryDelete.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            BtnCategoryDelete.Image = Properties.Resources.delete;
+            BtnCategoryDelete.Location = new Point(589, 196);
+            BtnCategoryDelete.Name = "BtnCategoryDelete";
+            BtnCategoryDelete.Size = new Size(182, 55);
+            BtnCategoryDelete.TabIndex = 10;
+            BtnCategoryDelete.UseVisualStyleBackColor = true;
+            // 
+            // BtnCategoryEdit
+            // 
+            BtnCategoryEdit.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            BtnCategoryEdit.Image = Properties.Resources.edit;
+            BtnCategoryEdit.Location = new Point(589, 135);
+            BtnCategoryEdit.Name = "BtnCategoryEdit";
+            BtnCategoryEdit.Size = new Size(182, 55);
+            BtnCategoryEdit.TabIndex = 9;
+            BtnCategoryEdit.UseVisualStyleBackColor = true;
+            // 
+            // BtnCategoryNew
+            // 
+            BtnCategoryNew.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            BtnCategoryNew.Image = Properties.Resources._new;
+            BtnCategoryNew.Location = new Point(589, 74);
+            BtnCategoryNew.Name = "BtnCategoryNew";
+            BtnCategoryNew.Size = new Size(182, 55);
+            BtnCategoryNew.TabIndex = 8;
+            BtnCategoryNew.UseVisualStyleBackColor = true;
+            // 
+            // DgCategory
+            // 
+            DgCategory.AllowUserToAddRows = false;
+            DgCategory.AllowUserToDeleteRows = false;
+            DgCategory.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            DgCategory.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            DgCategory.BackgroundColor = SystemColors.GradientInactiveCaption;
+            DgCategory.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            DgCategory.Location = new Point(45, 74);
+            DgCategory.Name = "DgCategory";
+            DgCategory.ReadOnly = true;
+            DgCategory.Size = new Size(536, 238);
+            DgCategory.TabIndex = 12;
+            // 
             // CategoryView
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -296,9 +305,9 @@
             tabControl1.ResumeLayout(false);
             tabPageCategoryList.ResumeLayout(false);
             tabPageCategoryList.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)DgCategory).EndInit();
             tabPageCategoryDetail.ResumeLayout(false);
             tabPageCategoryDetail.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)DgCategory).EndInit();
             ResumeLayout(false);
         }
 
@@ -312,12 +321,7 @@
         private TextBox TxtCategorySearch;
         private Label label2;
         private TabPage tabPageCategoryDetail;
-        private DataGridView DgCategory;
         private Button BtnCategorySearch;
-        private Button BtnCategoryClose;
-        private Button BtnCategoryDelete;
-        private Button BtnCategoryEdit;
-        private Button BtnCategoryNew;
         private TextBox TxtDescription;
         private TextBox TxtCategoryName;
         private TextBox TxtCategoryId;
@@ -326,5 +330,10 @@
         private Label label3;
         private Button BtnCategorySave;
         private Button BtnCategoryCancel;
+        private Button BtnCategoryClose;
+        private Button BtnCategoryDelete;
+        private Button BtnCategoryEdit;
+        private Button BtnCategoryNew;
+        private DataGridView DgCategory;
     }
 }

@@ -55,3 +55,4 @@ C:\Users\luisa\source\repos\Supermarket-mvp\Supermarket-mvp\obj\Debug\net8.0-win
 C:\Users\luisa\source\repos\Supermarket-mvp\Supermarket-mvp\obj\Debug\net8.0-windows\Supermar.FBD2E1F5.Up2Date
 C:\Users\luisa\source\repos\Supermarket-mvp\Supermarket-mvp\obj\Debug\net8.0-windows\Supermarket_mvp.Views.MainView.resources
 C:\Users\luisa\source\repos\Supermarket-mvp\Supermarket-mvp\obj\Debug\net8.0-windows\Supermarket_mvp.Views.ProductView.resources
+C:\Users\luisa\source\repos\Supermarket-mvp\Supermarket-mvp\obj\Debug\net8.0-windows\Supermarket_mvp.Views.CategoryView.resources

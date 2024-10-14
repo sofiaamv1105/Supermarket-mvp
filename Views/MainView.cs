@@ -35,9 +35,14 @@ namespace Supermarket_mvp.Views
             BtnProduct.Click += delegate { ShowProductView?.Invoke(this, EventArgs.Empty); };
         }
 
+        private void BtnCategory_Click(object sender, EventArgs e)
+        {
+            BtnCategory.Click += delegate { ShowCategoryView?.Invoke(this, EventArgs.Empty); };
+        }
+
         public event EventHandler ShowPayModeView;
         public event EventHandler ShowProductView;
         public event EventHandler ShowCustomersView;
-        public event EventHandler ShowCategoriesView;
+        public event EventHandler ShowCategoryView;
     }
 }

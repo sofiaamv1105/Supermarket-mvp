@@ -11,6 +11,10 @@ namespace Supermarket_mvp._Repositories
 {
     internal class CategoryRepository : BaseRepository, ICategoryRepository
     {
+        public CategoryRepository(string connectionString)
+        {
+            this.connectionString = connectionString;
+        }
         public void Add(CategoryModel category)
         {
             using (var connection = new SqlConnection(connectionString))
@@ -18,10 +22,10 @@ namespace Supermarket_mvp._Repositories
             {
                 connection.Open();
                 command.Connection = connection;
-                command.CommandText = "INSERT INTO PayMode VALUES (@name, @description)";
+                command.CommandText = "INSERT INTO Category VALUES (@name, @description)";
                 command.Parameters.AddWithValue("@name",
                  SqlDbType.NVarChar).Value = category.Category_Name;
-                command.Parameters.AddWithValue("@observation", SqlDbType.NVarChar).Value = category.Description;
+                command.Parameters.AddWithValue("@description", SqlDbType.NVarChar).Value = category.Description;
                 command.ExecuteNonQuery();
             }
         }
@@ -48,7 +52,7 @@ namespace Supermarket_mvp._Repositories
                 command.Connection = connection;
                 command.CommandText = @"UPDATE Category
                               SET Category_Name = @name,
-                                  Category_Description = @description
+                                  Description = @description
                               WHERE Category_Id = @id";
                 command.Parameters.AddWithValue("@name",
                 SqlDbType.NVarChar).Value = category.Category_Name;
@@ -56,33 +60,6 @@ namespace Supermarket_mvp._Repositories
                 command.Parameters.AddWithValue("@id", SqlDbType.Int).Value = category.Category_Id;
                 command.ExecuteNonQuery();
             }
-        }
-
-        public IEnumerable<CategoryModel> GetAll()
-        {
-            var categoryList = new List<CategoryModel>();
-
-            using (var connection = new SqlConnection(connectionString))
-            using (var command = new SqlCommand())
-            {
-                connection.Open();
-                command.Connection = connection;
-                command.CommandText = "SELECT * FROM Category ORDER BY Category_Id DESC";
-
-                using (var reader = command.ExecuteReader())
-                {
-                    while (reader.Read())
-                    {
-                        var categoryModel = new CategoryModel();
-                        categoryModel.Category_Id = (int)reader["Category_Id"];
-                        categoryModel.Category_Name = reader["Category_Name"].ToString();
-                        categoryModel.Description = reader["Description"].ToString();
-                        categoryList.Add(categoryModel);
-                    }
-                }
-            }
-
-            return categoryList;
         }
 
         public IEnumerable<CategoryModel> GetByValue(string searchValue)
@@ -109,13 +86,44 @@ namespace Supermarket_mvp._Repositories
                         var categoryModel = new CategoryModel();
                         categoryModel.Category_Id = (int)reader["Category_Id"];
                         categoryModel.Category_Name = reader["Category_Name"].ToString();
-                        categoryModel.Description = reader["Category_Description"].ToString();
+                        categoryModel.Description = reader["Description"].ToString();
                         categoryList.Add(categoryModel);
                     }
                 }
             }
 
             return categoryList;
+        }
+
+        public IEnumerable<CategoryModel> GetAll()
+        {
+            List<CategoryModel> categories = new List<CategoryModel>();
+            try
+            {
+                using (var connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    var command = new SqlCommand("SELECT Category_Id, Category_Name, Description FROM Category", connection);
+                    using (var reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            categories.Add(new CategoryModel
+                            {
+                                Category_Id = (int)reader["Category_Id"],
+                                Category_Name = reader["Category_Name"].ToString(),
+                                Description = reader["Description"].ToString()
+                            });
+                        }
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Error al cargar las categorías: " + ex.Message);
+            }
+
+            return categories;
         }
     }
 }

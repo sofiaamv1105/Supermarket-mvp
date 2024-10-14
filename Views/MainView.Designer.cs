@@ -29,17 +29,19 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            BtnProviders = new Button();
+            BtnProduct = new Button();
             BtnExit = new Button();
             BtnPayMode = new Button();
             pictureBox1 = new PictureBox();
-            BtnProduct = new Button();
-            BtnProviders = new Button();
+            BtnCategory = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
+            panel1.Controls.Add(BtnCategory);
             panel1.Controls.Add(BtnProviders);
             panel1.Controls.Add(BtnProduct);
             panel1.Controls.Add(BtnExit);
@@ -48,15 +50,38 @@
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(200, 450);
+            panel1.Size = new Size(200, 543);
             panel1.TabIndex = 0;
+            // 
+            // BtnProviders
+            // 
+            BtnProviders.BackgroundImage = Properties.Resources.providers;
+            BtnProviders.BackgroundImageLayout = ImageLayout.Zoom;
+            BtnProviders.Location = new Point(3, 260);
+            BtnProviders.Name = "BtnProviders";
+            BtnProviders.Size = new Size(197, 98);
+            BtnProviders.TabIndex = 4;
+            BtnProviders.TextAlign = ContentAlignment.MiddleRight;
+            BtnProviders.UseVisualStyleBackColor = true;
+            // 
+            // BtnProduct
+            // 
+            BtnProduct.BackgroundImage = Properties.Resources.products;
+            BtnProduct.BackgroundImageLayout = ImageLayout.Zoom;
+            BtnProduct.Location = new Point(0, 165);
+            BtnProduct.Name = "BtnProduct";
+            BtnProduct.Size = new Size(200, 98);
+            BtnProduct.TabIndex = 3;
+            BtnProduct.TextAlign = ContentAlignment.MiddleRight;
+            BtnProduct.UseVisualStyleBackColor = true;
+            BtnProduct.Click += BtnProduct_Click;
             // 
             // BtnExit
             // 
             BtnExit.BackgroundImage = Properties.Resources.salida;
             BtnExit.BackgroundImageLayout = ImageLayout.Zoom;
             BtnExit.Dock = DockStyle.Bottom;
-            BtnExit.Location = new Point(0, 355);
+            BtnExit.Location = new Point(0, 448);
             BtnExit.Name = "BtnExit";
             BtnExit.Size = new Size(200, 95);
             BtnExit.TabIndex = 2;
@@ -84,34 +109,23 @@
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
-            // BtnProduct
+            // BtnCategory
             // 
-            BtnProduct.BackgroundImage = Properties.Resources.products;
-            BtnProduct.BackgroundImageLayout = ImageLayout.Zoom;
-            BtnProduct.Location = new Point(0, 165);
-            BtnProduct.Name = "BtnProduct";
-            BtnProduct.Size = new Size(200, 98);
-            BtnProduct.TabIndex = 3;
-            BtnProduct.TextAlign = ContentAlignment.MiddleRight;
-            BtnProduct.UseVisualStyleBackColor = true;
-            BtnProduct.Click += BtnProduct_Click;
-            // 
-            // BtnProviders
-            // 
-            BtnProviders.BackgroundImage = Properties.Resources.providers;
-            BtnProviders.BackgroundImageLayout = ImageLayout.Zoom;
-            BtnProviders.Location = new Point(3, 260);
-            BtnProviders.Name = "BtnProviders";
-            BtnProviders.Size = new Size(197, 98);
-            BtnProviders.TabIndex = 4;
-            BtnProviders.TextAlign = ContentAlignment.MiddleRight;
-            BtnProviders.UseVisualStyleBackColor = true;
+            BtnCategory.BackgroundImage = Properties.Resources.categorias;
+            BtnCategory.BackgroundImageLayout = ImageLayout.Zoom;
+            BtnCategory.Location = new Point(3, 352);
+            BtnCategory.Name = "BtnCategory";
+            BtnCategory.Size = new Size(197, 98);
+            BtnCategory.TabIndex = 5;
+            BtnCategory.TextAlign = ContentAlignment.MiddleRight;
+            BtnCategory.UseVisualStyleBackColor = true;
+            BtnCategory.Click += BtnCategory_Click;
             // 
             // MainView
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(800, 543);
             Controls.Add(panel1);
             Name = "MainView";
             Text = "Supermarket";
@@ -129,5 +143,6 @@
         private Button BtnExit;
         private Button BtnProviders;
         private Button BtnProduct;
+        private Button BtnCategory;
     }
 }

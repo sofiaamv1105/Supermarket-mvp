@@ -99,10 +99,11 @@ namespace Supermarket_mvp.Views
         }
         public void ClearFields()
         {
-            TxtProductName.Text = string.Empty;
-            TxtProductPrice.Text = string.Empty;
-            TxtProductStock.Text = string.Empty;
-            TxtCategoryId.Text = string.Empty;
+            ProductId = "0";
+            ProductName = string.Empty;
+            ProductPrice = "0";
+            ProductStock = "0";
+            CategoryId = "";
         }
 
         public void SetProductListBindingSource(BindingSource productList)
@@ -176,6 +177,10 @@ namespace Supermarket_mvp.Views
         {
             get { return message; }
             set { message = value; }
+        }
+        public void Show()
+        {
+            base.Show();
         }
     }
 }

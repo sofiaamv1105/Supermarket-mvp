@@ -11,8 +11,8 @@ namespace Supermarket_mvp._Repositories
 {
     internal class ProductRepository : BaseRepository, IProductRepository
     {
-        public ProductRepository(string connectionString) 
-        { 
+        public ProductRepository(string connectionString)
+        {
             this.connectionString = connectionString;
         }
         public void Add(ProductModel product)

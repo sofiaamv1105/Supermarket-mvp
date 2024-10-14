@@ -134,7 +134,7 @@ namespace Supermarket_mvp.Presenters
         {
             var product = (ProductModel)productBindingSource.Current;
 
-            view.ProductId = product.Product_Id.ToString(); 
+            view.ProductId = product.Product_Id.ToString();
             view.ProductName = product.Product_Name;
             view.ProductPrice = product.Product_Price.ToString();
             view.ProductStock = product.Product_Stock.ToString();

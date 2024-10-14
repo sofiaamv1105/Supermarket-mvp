@@ -29,7 +29,7 @@ namespace Supermarket_mvp.Models
 
         [DisplayName("Category Id")]
         [Required(ErrorMessage = "Category Id is required")]
-        [Range(0, 100, ErrorMessage = "Category Id debe must be between 0 and 100 characters.")]
+        [Range(0, 10000, ErrorMessage = "Category Id debe must be between 0 and 100 characters.")]
         public int Category_Id { get; set; } // Llave foránea
     }
 }
