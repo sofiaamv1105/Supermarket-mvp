@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            BtnProviders = new Button();
+            BtnCategory = new Button();
+            BtnCustomers = new Button();
             BtnProduct = new Button();
             BtnExit = new Button();
             BtnPayMode = new Button();
             pictureBox1 = new PictureBox();
-            BtnCategory = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -42,7 +42,7 @@
             // panel1
             // 
             panel1.Controls.Add(BtnCategory);
-            panel1.Controls.Add(BtnProviders);
+            panel1.Controls.Add(BtnCustomers);
             panel1.Controls.Add(BtnProduct);
             panel1.Controls.Add(BtnExit);
             panel1.Controls.Add(BtnPayMode);
@@ -53,16 +53,29 @@
             panel1.Size = new Size(200, 543);
             panel1.TabIndex = 0;
             // 
-            // BtnProviders
+            // BtnCategory
             // 
-            BtnProviders.BackgroundImage = Properties.Resources.providers;
-            BtnProviders.BackgroundImageLayout = ImageLayout.Zoom;
-            BtnProviders.Location = new Point(3, 260);
-            BtnProviders.Name = "BtnProviders";
-            BtnProviders.Size = new Size(197, 98);
-            BtnProviders.TabIndex = 4;
-            BtnProviders.TextAlign = ContentAlignment.MiddleRight;
-            BtnProviders.UseVisualStyleBackColor = true;
+            BtnCategory.BackgroundImage = Properties.Resources.categorias;
+            BtnCategory.BackgroundImageLayout = ImageLayout.Zoom;
+            BtnCategory.Location = new Point(0, 352);
+            BtnCategory.Name = "BtnCategory";
+            BtnCategory.Size = new Size(200, 98);
+            BtnCategory.TabIndex = 5;
+            BtnCategory.TextAlign = ContentAlignment.MiddleRight;
+            BtnCategory.UseVisualStyleBackColor = true;
+            BtnCategory.Click += BtnCategory_Click;
+            // 
+            // BtnCustomers
+            // 
+            BtnCustomers.BackgroundImage = Properties.Resources.providers;
+            BtnCustomers.BackgroundImageLayout = ImageLayout.Zoom;
+            BtnCustomers.Location = new Point(0, 260);
+            BtnCustomers.Name = "BtnCustomers";
+            BtnCustomers.Size = new Size(200, 98);
+            BtnCustomers.TabIndex = 4;
+            BtnCustomers.TextAlign = ContentAlignment.MiddleRight;
+            BtnCustomers.UseVisualStyleBackColor = true;
+            BtnCustomers.Click += BtnCustomers_Click;
             // 
             // BtnProduct
             // 
@@ -95,7 +108,7 @@
             BtnPayMode.Name = "BtnPayMode";
             BtnPayMode.Size = new Size(200, 98);
             BtnPayMode.TabIndex = 1;
-            BtnPayMode.TextAlign = ContentAlignment.MiddleRight;
+            BtnPayMode.TextAlign = ContentAlignment.MiddleLeft;
             BtnPayMode.UseVisualStyleBackColor = true;
             BtnPayMode.Click += BtnPayMode_Click;
             // 
@@ -109,26 +122,16 @@
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
-            // BtnCategory
-            // 
-            BtnCategory.BackgroundImage = Properties.Resources.categorias;
-            BtnCategory.BackgroundImageLayout = ImageLayout.Zoom;
-            BtnCategory.Location = new Point(3, 352);
-            BtnCategory.Name = "BtnCategory";
-            BtnCategory.Size = new Size(197, 98);
-            BtnCategory.TabIndex = 5;
-            BtnCategory.TextAlign = ContentAlignment.MiddleRight;
-            BtnCategory.UseVisualStyleBackColor = true;
-            BtnCategory.Click += BtnCategory_Click;
-            // 
             // MainView
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ControlLightLight;
             ClientSize = new Size(800, 543);
             Controls.Add(panel1);
             Name = "MainView";
             Text = "Supermarket";
+            TransparencyKey = Color.Black;
             WindowState = FormWindowState.Maximized;
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -141,7 +144,7 @@
         private Button BtnPayMode;
         private PictureBox pictureBox1;
         private Button BtnExit;
-        private Button BtnProviders;
+        private Button BtnCustomers;
         private Button BtnProduct;
         private Button BtnCategory;
     }
